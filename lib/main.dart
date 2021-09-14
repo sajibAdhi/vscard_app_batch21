@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/second_screen.dart';
+import 'screens/first_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,17 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondScreen()));
-          },
-          child: const Text(
-            "First  Screen",
-          ),
-          color: Colors.red,
-        ),
+    return const Scaffold(
+      body: SafeArea(
+        child: FirstScreen(),
       ),
     );
   }

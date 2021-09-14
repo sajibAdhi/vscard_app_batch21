@@ -30,6 +30,6 @@ flutter:
     - family: Glory
       fonts:
         - asset: assets/fonts/Glory-Regular.ttf
-    - family: Glory
+    - family: DancingScript
       fonts:
         - asset: assets/fonts/DancingScript-Regular.ttf
