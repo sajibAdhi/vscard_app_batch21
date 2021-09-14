@@ -1,57 +1,73 @@
 import 'package:flutter/material.dart';
 
-class FirstScreen extends StatelessWidget {
+import 'second_screen.dart';
+
+class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
   @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
-        CircleAvatar(
-          backgroundImage: AssetImage("assets/images/user.png"),
-          radius: 50,
-        ),
-        Text(
-          "Sajib Adhikary",
-          style: TextStyle(),
-        ),
-        Text("Flutter Developer"),
-        Card(
-          margin: EdgeInsets.symmetric(
-            vertical: 15,
-            horizontal: 30,
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const CircleAvatar(
+            backgroundImage: AssetImage("assets/images/user.png"),
+            radius: 50,
           ),
-          child: ListTile(
-            leading: Icon(Icons.phone_android),
-            title: Text(
-              "+880 1400593322",
+          const Card(
+            margin: EdgeInsets.symmetric(
+              vertical: 15,
+              horizontal: 30,
+            ),
+            child: Text(
+              "Sajib Adhikary",
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: Colors.teal,
+                fontFamily: "DanceScript",
+                fontSize: 26,
               ),
             ),
           ),
-        ),
-        Card(
-          margin: EdgeInsets.symmetric(
-            vertical: 15,
-            horizontal: 30,
-          ),
-          child: ListTile(
-            leading: Icon(Icons.mail),
-            title: Text(
-              "tosajibadhi@gmail.com",
+          const Card(
+            margin: EdgeInsets.symmetric(
+              vertical: 15,
+              horizontal: 30,
+            ),
+            child: Text(
+              "Flutter Developer",
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: Colors.teal,
+                fontFamily: "DanceScript",
+                fontSize: 26,
               ),
             ),
           ),
-        ),
-      ],
+          Container(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SecondScreen(),
+                  ),
+                );
+              },
+              child: const Text(
+                "Next",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              style: const ButtonStyle(),
+            ),
+            padding: const EdgeInsets.only(top: 50),
+          ),
+        ],
+      ),
     );
   }
 }
